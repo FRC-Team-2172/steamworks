@@ -104,7 +104,7 @@ public class REVDigitBoard {
 		charmap.put('O',24);
 	 	charreg[25][0] = (byte)0b11011110; charreg[25][1] = (byte)0b00000000; //P \/
 		charmap.put('P',25);
-	 	charreg[26][0] = (byte)0b00111111; charreg[26][1] = (byte)0b00001000; //q
+	 	charreg[26][0] = (byte)0b00111111; charreg[26][1] = (byte)0b00001000; //Q
 		charmap.put('Q',26);
 	 	charreg[27][0] = (byte)0b11011110; charreg[27][1] = (byte)0b00001000; //R
 		charmap.put('R',27);
