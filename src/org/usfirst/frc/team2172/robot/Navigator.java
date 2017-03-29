@@ -14,7 +14,6 @@ public class Navigator {
 	private double y;
 	private double theta;
 	
-	@SuppressWarnings("unused")
 	private Thread t;
 	
 	public Navigator(CANTalon leftTalon, CANTalon rightTalon, Point startPoint){
@@ -54,6 +53,7 @@ public class Navigator {
 				}
 			}
 		});
+		this.t.start();
 	}
 	
 	public Point[] generatePath(Point target, double maxRadsPerStep){

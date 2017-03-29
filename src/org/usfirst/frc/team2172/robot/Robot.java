@@ -169,7 +169,8 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putNumber("Match Time", Timer.getMatchTime());
 		
 		//Driver Station Data
-		SmartDashboard.putNumber("Driver Station Time", Timer.getMatchTime());
+		SmartDashboard.putNumber("Driver Station Time", DriverStation.getInstance().getMatchTime());
+		SmartDashboard.putNumber("Battery Voltage", DriverStation.getInstance().getBatteryVoltage());
 	}
 
 	@Override
