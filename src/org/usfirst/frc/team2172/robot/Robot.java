@@ -49,7 +49,7 @@ public class Robot extends IterativeRobot {
 		drive3.setPosition(0);
 		drive4.setPosition(0);
 		digit.clear();
-		Thread autoChoose = new Thread(() -> {
+		Thread autoChoose = new Thread(() -> { //TODO: Fix this shitz
 			int tAutoMode = autoMode;
 			double aMax = 214;
 			double aMin = 198;
@@ -171,6 +171,11 @@ public class Robot extends IterativeRobot {
 		//Driver Station Data
 		SmartDashboard.putNumber("Driver Station Time", DriverStation.getInstance().getMatchTime());
 		SmartDashboard.putNumber("Battery Voltage", DriverStation.getInstance().getBatteryVoltage());
+		
+		//Navigator Data
+		SmartDashboard.putNumber("Robot X", navigator.getX());
+		SmartDashboard.putNumber("Robot Y", navigator.getY());
+		SmartDashboard.putNumber("Robot Angle", navigator.getTheta());
 	}
 
 	@Override
