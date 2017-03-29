@@ -122,7 +122,6 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void teleopPeriodic() {
-		SmartDashboard.putNumber("Positioner Encoder Value", positioner.getPosition());
 		//DRIVE
 		driver.arcadeDrive(xBox.getRawAxis(5), xBox.getRawAxis(4));
 		
@@ -147,7 +146,30 @@ public class Robot extends IterativeRobot {
 			shooter.disable();
 			feeder.set(0.0);
 			feedServo.setSpeed(-0.98);
-		}	
+		}
+		
+		//DOOZ THE DATA LOG
+		//Joystick Values
+		SmartDashboard.putNumber("Speed Axis", xBox.getRawAxis(5));
+		SmartDashboard.putNumber("Rotation Axis", xBox.getRawAxis(4));
+		
+		//Drive & Climber Voltage and Current
+		SmartDashboard.putNumber("Drive 1 Output Current", drive1.getOutputCurrent());
+		SmartDashboard.putNumber("Drive 1 Output Voltage", drive1.getOutputVoltage());
+		SmartDashboard.putNumber("Drive 2 Output Current", drive2.getOutputCurrent());
+		SmartDashboard.putNumber("Drive 2 Output Voltage", drive2.getOutputVoltage());
+		SmartDashboard.putNumber("Drive 3 Output Current", drive3.getOutputCurrent());
+		SmartDashboard.putNumber("Drive 3 Output Voltage", drive3.getOutputVoltage());
+		SmartDashboard.putNumber("Drive 4 Output Current", drive4.getOutputCurrent());
+		SmartDashboard.putNumber("Drive 4 Output Voltage", drive4.getOutputVoltage());
+		SmartDashboard.putNumber("Climber Output Current", climber.getOutputCurrent());
+		SmartDashboard.putNumber("Climber Output Voltage", climber.getOutputVoltage());
+		
+		//Match Data
+		SmartDashboard.putNumber("Match Time", Timer.getMatchTime());
+		
+		//Driver Station Data
+		SmartDashboard.putNumber("Driver Station Time", Timer.getMatchTime());
 	}
 
 	@Override
