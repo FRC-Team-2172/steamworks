@@ -51,27 +51,27 @@ public class REVDigitBoard {
 		charreg = new byte[37][2]; //charreg is short for character registry
 		charmap = new HashMap<Character, Integer>(); 
 		
-		charreg[0][0] = (byte)0b00111111; charreg[9][1] = (byte)0b00000000; //0
+		charreg[0][0] = (byte)0b00111111; charreg[9][1] = (byte)0b00000000; //0*
 		charmap.put('0',0);
-		charreg[1][0] = (byte)0b00110000; charreg[0][1] = (byte)0b00000000; //1
+		charreg[1][0] = (byte)0b00110000; charreg[0][1] = (byte)0b00000000; //1*
 		charmap.put('1',1);
-	 	charreg[2][0] = (byte)0b11011011; charreg[1][1] = (byte)0b00000000; //2
+	 	charreg[2][0] = (byte)0b11011011; charreg[1][1] = (byte)0b00000000; //2*
 		charmap.put('2',2);
-	 	charreg[3][0] = (byte)0b11111001; charreg[2][1] = (byte)0b00000000; //3
+	 	charreg[3][0] = (byte)0b11111001; charreg[2][1] = (byte)0b00000000; //3*
 		charmap.put('3',3);
-	 	charreg[4][0] = (byte)0b11110100; charreg[3][1] = (byte)0b00000000; //4
+	 	charreg[4][0] = (byte)0b11110100; charreg[3][1] = (byte)0b00000000; //4*
 		charmap.put('4',4);
-	 	charreg[5][0] = (byte)0b11101101; charreg[4][1] = (byte)0b00000000; //5
+	 	charreg[5][0] = (byte)0b11101101; charreg[4][1] = (byte)0b00000000; //5*
 		charmap.put('5',5);
-	 	charreg[6][0] = (byte)0b11101111; charreg[5][1] = (byte)0b00000000; //6
+	 	charreg[6][0] = (byte)0b11101111; charreg[5][1] = (byte)0b00000000; //6*
 		charmap.put('6',6);
-	 	charreg[7][0] = (byte)0b00000111; charreg[6][1] = (byte)0b00000000; //7
+	 	charreg[7][0] = (byte)0b00000111; charreg[6][1] = (byte)0b00000000; //7*
 		charmap.put('7',7);
-	 	charreg[8][0] = (byte)0b11111111; charreg[7][1] = (byte)0b00000000; //8
+	 	charreg[8][0] = (byte)0b11111111; charreg[7][1] = (byte)0b00000000; //8*
 		charmap.put('8',8);
-	 	charreg[9][0] = (byte)0b11111101; charreg[8][1] = (byte)0b00000000; //9
+	 	charreg[9][0] = (byte)0b11111101; charreg[8][1] = (byte)0b00000000; //9*
 		charmap.put('9',9);
-
+		//*All numbers were done at Miami!
 	 	charreg[10][0] = (byte)0b11111110; charreg[10][1] = (byte)0b00000000; //A \/
 		charmap.put('A',10);
 	 	charreg[11][0] = (byte)0b01111001; charreg[11][1] = (byte)0b00010010; //B \/
@@ -92,11 +92,11 @@ public class REVDigitBoard {
 		charmap.put('I',18);
 	 	charreg[19][0] = (byte)0b00110011; charreg[19][1] = (byte)0b00000000; //J \/
 		charmap.put('J',19);
-	 	charreg[20][0] = (byte)0b01110000; charreg[20][1] = (byte)0b00001100; //K
+	 	charreg[20][0] = (byte)0b10000110; charreg[20][1] = (byte)0b00010001; //K \/
 		charmap.put('K',20);
 	 	charreg[21][0] = (byte)0b00001110; charreg[21][1] = (byte)0b00000000; //L \/
 		charmap.put('L',21);
-	 	charreg[22][0] = (byte)0b00110110; charreg[22][1] = (byte)0b00000101; //M
+	 	charreg[22][0] = (byte)0b00110110; charreg[22][1] = (byte)0b00101000; //M \/
 		charmap.put('M',22);
 	 	charreg[23][0] = (byte)0b00110110; charreg[23][1] = (byte)0b00100100; //N \/
 		charmap.put('N',23);
@@ -104,25 +104,25 @@ public class REVDigitBoard {
 		charmap.put('O',24);
 	 	charreg[25][0] = (byte)0b11011110; charreg[25][1] = (byte)0b00000000; //P \/
 		charmap.put('P',25);
-	 	charreg[26][0] = (byte)0b00111111; charreg[26][1] = (byte)0b00001000; //Q
+	 	charreg[26][0] = (byte)0b00111111; charreg[26][1] = (byte)0b00100000; //Q \/
 		charmap.put('Q',26);
-	 	charreg[27][0] = (byte)0b11011110; charreg[27][1] = (byte)0b00001000; //R
+	 	charreg[27][0] = (byte)0b11011110; charreg[27][1] = (byte)0b00100000; //R \/
 		charmap.put('R',27);
-	 	charreg[28][0] = (byte)0b10001101; charreg[28][1] = (byte)0b00000001; //S
+	 	charreg[28][0] = (byte)0b10001101; charreg[28][1] = (byte)0b00000001; //S \/
 		charmap.put('S',28);
 	 	charreg[29][0] = (byte)0b00001000; charreg[29][1] = (byte)0b00010010; //T \/
 		charmap.put('T',29);
-	 	charreg[30][0] = (byte)0b00111110; charreg[30][1] = (byte)0b00000000; //U
+	 	charreg[30][0] = (byte)0b00110111; charreg[30][1] = (byte)0b00000000; //U \/
 		charmap.put('U',30);
-	 	charreg[31][0] = (byte)0b00110000; charreg[31][1] = (byte)0b00100100; //V
+	 	charreg[31][0] = (byte)0b00000110; charreg[31][1] = (byte)0b00100100; //V \/
 		charmap.put('V',31);
-	 	charreg[32][0] = (byte)0b00110110; charreg[32][1] = (byte)0b00101000; //W
+	 	charreg[32][0] = (byte)0b00110110; charreg[32][1] = (byte)0b00000101; //W \/
 		charmap.put('W',32);
-	 	charreg[33][0] = (byte)0b00000000; charreg[33][1] = (byte)0b00101101; //X
+	 	charreg[33][0] = (byte)0b00000000; charreg[33][1] = (byte)0b00101101; //X \/
 		charmap.put('X',33);
-	 	charreg[34][0] = (byte)0b00000000; charreg[34][1] = (byte)0b00010101; //Y
+	 	charreg[34][0] = (byte)0b00000000; charreg[34][1] = (byte)0b00101010; //Y \/
 		charmap.put('Y',34);
-	 	charreg[35][0] = (byte)0b00001001; charreg[35][1] = (byte)0b00100100; //Z
+	 	charreg[35][0] = (byte)0b00001001; charreg[35][1] = (byte)0b00100100; //Z \/
 		charmap.put('Z',35);
 		charreg[36][0] = (byte)0b00000000; charreg[36][1] = (byte)0b00000000; //space
 		charmap.put(' ',36);
