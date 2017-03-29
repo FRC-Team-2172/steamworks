@@ -35,4 +35,12 @@ public class Point {
     public double angleTo(Point point){  
       return (Math.atan2((point.Y - this.Y), (point.X - this.X)));
     }
+    
+    public boolean equals(Point point){
+    	return(this.X == point.X && this.Y == point.Y && this.THETA == point.THETA);
+    }
+    
+    public boolean equals(Point point, double cartisianTolerance, double angularTolerance){
+    	return(Math.abs(this.X - point.X) <= cartisianTolerance && Math.abs(this.X - point.X) <= cartisianTolerance && Math.abs(this.X - point.X) <= angularTolerance);
+    }
 }

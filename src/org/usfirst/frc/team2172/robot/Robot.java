@@ -49,14 +49,16 @@ public class Robot extends IterativeRobot {
 		drive3.setPosition(0);
 		drive4.setPosition(0);
 		digit.clear();
-		Thread autoChoose = new Thread(() -> { //TODO: Fix this shitz
+		Thread autoChoose = new Thread(() -> {
 			int tAutoMode = autoMode;
-			double aMax = 214;
-			double aMin = 198;
+			double aMax = digit.getPot();
+			double aMin = digit.getPot();
 			while(!Thread.interrupted()){
+				aMin = (digit.getPot() < aMin)? digit.getPot() : aMin;
+				aMax = (digit.getPot() > aMax)? digit.getPot() : aMax;
 				digit.display("" + tAutoMode + "A");
 				int pot = digit.getPot();
-				tAutoMode = (int)Math.round(((pot - aMin)/(aMax - aMin) * 2));
+				tAutoMode = (int)Math.round(((pot - aMin)/(aMax - aMin) * 3));
 				SmartDashboard.putNumber("Auto Mode", autoMode);
 				if (!digit.getButtonA()) {
 					autoMode = tAutoMode;

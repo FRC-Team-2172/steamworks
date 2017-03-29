@@ -69,6 +69,24 @@ public class Driver extends RobotDrive{
 	}
 	
 	public void goTo(Point point, Navigator navigator){
-		Point[] path = navigator.generatePath(point, Math.PI/4);
+		Point[] path = navigator.generatePath(point, 2*Math.PI);
+		//THIS IS NOT THE RIGHT WAY TO DO IT BUT FUCK IT
+		for(int i = 0; i < path.length; i++){
+			int protection = 0;
+			while(!navigator.getLocation().equals(path[i], 0.4, Math.PI/32) && protection < 600){ //Problem with that protection scheme
+				if(Math.abs(navigator.getTheta() - path[i].THETA) > Math.PI/32){
+					if((navigator.getTheta() - path[i].THETA) > 0){
+						//turn right
+						this.arcadeDrive(0, 0.7);
+					} else {
+						//turn left
+						this.arcadeDrive(0, -0.7);
+					}
+				} else {
+					this.arcadeDrive(0.7, 0);
+				}
+			}
+		}
+		this.arcadeDrive(0, 0);
 	}
 }

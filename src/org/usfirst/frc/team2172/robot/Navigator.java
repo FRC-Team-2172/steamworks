@@ -13,10 +13,13 @@ public class Navigator {
 	private double x;
 	private double y;
 	private double theta;
+	private Point startPoint;
 	
 	private Thread t;
 	
 	public Navigator(CANTalon leftTalon, CANTalon rightTalon, Point startPoint){
+		this.startPoint = startPoint;
+		
 		this.leftTalon = leftTalon;
 		this.rightTalon = rightTalon;
 		this.leftTalon.setFeedbackDevice(FeedbackDevice.QuadEncoder);
@@ -54,6 +57,18 @@ public class Navigator {
 			}
 		});
 		this.t.start();
+	}
+	
+	public void setStartPoint(Point startPoint){
+		if(this.startPoint.equals(this.getLocation())){ //We have not moved
+			this.x = startPoint.X;
+			this.y = startPoint.Y;
+			this.theta = startPoint.THETA;
+		} else {
+			this.x += startPoint.X;
+			this.y += startPoint.Y;
+			this.theta += startPoint.THETA;
+		}
 	}
 	
 	public Point[] generatePath(Point target, double maxRadsPerStep){
