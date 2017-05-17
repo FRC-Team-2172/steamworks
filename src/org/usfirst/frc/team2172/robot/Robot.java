@@ -239,11 +239,13 @@ public class Robot extends IterativeRobot {
 		} else if(gamepad.getRawButton(2) || xBox.getRawButton(10)){ //INTAKE
 			intake.set(1.0);
 			auger.set(-1.0);
-		}else if(gamepad.getRawButton(1) || xBox.getRawButton(5)){ //SHOOT
+		//}else if(gamepad.getRawButton(1) || xBox.getRawButton(5)){ //SHOOT
+		}else if(xBox.getRawButton(2)){ //SHOOT
+			//feeder.set(1.0);
+			//auger.set(-1.0);
+			//feedServo.setSpeed(1);
+			shooter.shoot(1.09);
 			shooter.enable();
-			feeder.set(1.0);
-			auger.set(-1.0);
-			feedServo.setSpeed(1);
 		} else { //NONE
 			intake.set(0.0);
 			auger.set(0.0);
